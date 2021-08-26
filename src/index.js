@@ -1,3 +1,9 @@
+import menuSample from './templates/menu.hbs';
+import menu from './menu.json';
+// console.log(menuSample(menu[0]));
+
+const ulEl = document.querySelector('ul.js-menu');
+// theme //
 const Theme = {
   LIGHT: 'light-theme',
   DARK: 'dark-theme',
@@ -23,3 +29,14 @@ function changeThemeCheckbox() {
   }
   bodyEl.classList.add(localStorage.getItem('theme'));
 }
+
+// end theme //
+
+// sample //
+const cardsMakeup = createCards(menu);
+// console.log(cardsMakeup);
+function createCards(menu) {
+  return menu.map(el => menuSample(el)).join('');
+}
+ulEl.insertAdjacentHTML('beforeend', cardsMakeup);
+// end sample //
