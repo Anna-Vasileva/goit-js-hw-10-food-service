@@ -15,6 +15,9 @@ const bodyEl = document.querySelector('body');
 if (localStorage.getItem('theme') === Theme.DARK) {
   themeCheckboxEl.setAttribute('checked', true);
   bodyEl.classList.add(localStorage.getItem('theme'));
+} else {
+  localStorage.setItem('theme', Theme.LIGHT);
+  bodyEl.classList.add(localStorage.getItem('theme'));
 }
 
 themeCheckboxEl.addEventListener('change', changeThemeCheckbox);
